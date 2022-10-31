@@ -13,15 +13,15 @@
     content: "";
     background-color: black;
     height: 1px;
-    width: calc(50% - 250px);
+    width: 43%;
     position: absolute;
     top: 80%;
 }
 
 .special__heading::after {
-    right: 140px;
+    right: 0;
 }
 
 .special__heading::before {
-    left: 140px;
+    left: 0;
 }

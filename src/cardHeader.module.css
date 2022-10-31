@@ -1,0 +1,15 @@
+.cardHeader {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid gray;
+}
+
+.icon {
+    color: #4698fe;
+}
+
+p {
+    margin: 0;
+}

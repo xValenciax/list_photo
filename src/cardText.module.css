@@ -1,0 +1,13 @@
+.cardText {
+    padding: 10px;
+}
+
+.nameAndLikes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.desc {
+    text-align: center;
+    padding: 5px 15px;
+}

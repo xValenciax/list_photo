@@ -19,7 +19,7 @@ class PhotoCard extends Component {
   }
   render() {
     return (
-      <div className="card">
+      <div className={styles.card}>
         <CardHeader />
         <CardImage />
         <CardText />

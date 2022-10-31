@@ -1,6 +1,9 @@
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .content {
-    width: 100%;
-    /* min-height: 35vh; */
     display: flex;
     flex-wrap: wrap;
     gap: 40px;

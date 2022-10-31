@@ -1,0 +1,17 @@
+.image {
+    background-color: gray;
+    min-height: 250px;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+}
+
+.icon {
+    font-size: 30px;
+    position: absolute;
+    top: 85%;
+    right: 10px;
+    color: white;
+}
