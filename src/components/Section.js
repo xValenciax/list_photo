@@ -5,6 +5,7 @@ import PhotoCard from "./PhotoCard";
 import axios from "axios";
 import classPhoto from "./classPhoto";
 import FormAddPhoto from "./FormAddPhoto";
+import avatar from "../WhatsApp Image 2022-05-26 at 11.36.56 PM.jpeg";
 
 export class Section extends Component {
   constructor(props) {
@@ -12,10 +13,13 @@ export class Section extends Component {
 
     this.state = {
       photoList: [],
+      localList: [],
+      localID: 1,
     };
   }
 
   componentDidMount() {
+    // get images from the unsplash API
     const API_KEY = "3h35TFoziVsEhdtoz3HQy_7j_uSsQj1yX_Xn0iQAGV0";
     axios
       .get(`https://api.unsplash.com/photos?per_page=4&&client_id=${API_KEY}`)
@@ -41,10 +45,31 @@ export class Section extends Component {
       .catch((err) => {
         this.setState({ errMsg: err });
       });
+
+    // get images from local storage
+    let locals = JSON.parse(localStorage.getItem("photos"));
+    let list2 = [];
+    let counter = 1;
+    for (let img of locals) {
+      img = JSON.parse(img);
+      let photo = new classPhoto(
+        counter,
+        "Selim Mohamed",
+        avatar,
+        img.img,
+        img.photoname,
+        0,
+        img.desc
+      );
+      counter++;
+      list2.push(photo);
+    }
+    this.setState({ localList: list2 });
+    this.setState({ localID: counter });
   }
 
   render() {
-    const { photoList } = this.state;
+    const { photoList, localList } = this.state;
     const { type, margin } = this.props;
     return (
       <section text={this.props.text}>
@@ -63,8 +88,21 @@ export class Section extends Component {
                 className={styles.card}
               />
             ))
-          ) : type === "local" ? (
-            "no content here yet"
+          ) : type === "local" &&
+            localList !== undefined &&
+            localList.length ? (
+            localList.map((photo) => (
+              <PhotoCard
+                key={photo.getID()}
+                username={photo.getUsername()}
+                profile={photo.getProfilePhoto()}
+                img={photo.getPhoto()}
+                likes={photo.getLikes()}
+                photoname={photo.getphotoName()}
+                desc={photo.getDesc()}
+                className={styles.card}
+              />
+            ))
           ) : (
             <FormAddPhoto />
           )}
