@@ -11,6 +11,12 @@
     color: #4698fe;
 }
 
+.delete {
+    font-size: 24px;
+    margin-left: 130px;
+    color: black;
+}
+
 .image {
     width: 40px;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));

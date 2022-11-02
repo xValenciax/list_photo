@@ -17,13 +17,12 @@ function PhotoCard(props) {
   };
   return (
     <div className={styles.card}>
-      <CardHeader username={username} profile={profile} />
+      <CardHeader username={username} profile={profile} type={type} />
       <CardImage
         img={img}
         isLiked={isLiked}
         isDisliked={isDisLiked}
         liked={liked}
-        type={type}
       />
       <CardText likes={likes} liked={liked} desc={desc} photoname={photoname} />
     </div>

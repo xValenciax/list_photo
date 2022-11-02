@@ -5,7 +5,6 @@ import { FaRegHeart, FaHeart } from "react-icons/fa";
 function CardImage(props) {
   const { img, type } = props;
   const { liked, isLiked, isDisliked } = props;
-  console.log(type);
   return (
     <div className={styles.image}>
       <img
