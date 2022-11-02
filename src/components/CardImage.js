@@ -3,8 +3,8 @@ import styles from "../cardImg.module.css";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 function CardImage(props) {
-  const { img, type } = props;
-  const { liked, isLiked, isDisliked } = props;
+  const { img } = props;
+  const { liked, isLiked } = props;
   return (
     <div className={styles.image}>
       <img
@@ -18,7 +18,7 @@ function CardImage(props) {
       {liked ? (
         <FaHeart
           className={`${styles.Likedicon} ${styles.icon}`}
-          onClick={() => isDisliked()}
+          onClick={() => isLiked()}
         />
       ) : (
         <FaRegHeart className={styles.icon} onClick={() => isLiked()} />

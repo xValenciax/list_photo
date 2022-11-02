@@ -5,25 +5,32 @@ import CardText from "./CardText";
 import styles from "../photoCard.module.css";
 
 function PhotoCard(props) {
-  const { username, profile, img, likes, photoname, desc, type } = props;
+  const {
+    id,
+    username,
+    profile,
+    img,
+    likes,
+    photoname,
+    desc,
+    type,
+    removeEle,
+  } = props;
   const [liked, setLiked] = useState(false);
 
-  const isLiked = () => {
-    setLiked(true);
-  };
-
-  const isDisLiked = () => {
-    setLiked(false);
+  const toggleLiked = () => {
+    setLiked((prev) => !prev);
   };
   return (
     <div className={styles.card}>
-      <CardHeader username={username} profile={profile} type={type} />
-      <CardImage
-        img={img}
-        isLiked={isLiked}
-        isDisliked={isDisLiked}
-        liked={liked}
+      <CardHeader
+        username={username}
+        profile={profile}
+        type={type}
+        removeEle={removeEle}
+        id={id}
       />
+      <CardImage img={img} isLiked={toggleLiked} liked={liked} />
       <CardText likes={likes} liked={liked} desc={desc} photoname={photoname} />
     </div>
   );

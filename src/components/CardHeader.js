@@ -4,6 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 
 function CardHeader(props) {
+  const { removeEle, id } = props;
   return (
     <div className={styles.cardHeader}>
       <div className={styles.image}>
@@ -15,7 +16,11 @@ function CardHeader(props) {
       </div>
       <p>{props.username}</p>
       <FaCheckCircle className={styles.icon} />
-      {props.type === "local" ? <AiFillDelete className={styles.delete} /> : ""}
+      {props.type === "local" ? (
+        <AiFillDelete className={styles.delete} onClick={() => removeEle(id)} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

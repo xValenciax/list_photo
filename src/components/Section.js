@@ -47,7 +47,7 @@ export class Section extends Component {
       });
 
     // get images from local storage
-    let locals = JSON.parse(localStorage.getItem("photos"));
+    let locals = JSON.parse(localStorage.getItem("photos")) || [];
     let list2 = [];
     let counter = 1;
     for (let img of locals) {
@@ -67,6 +67,17 @@ export class Section extends Component {
     this.setState({ localList: list2 });
     this.setState({ localID: counter });
   }
+
+  removeEle = (id) => {
+    console.log(id);
+    let newLocals = this.state.localList.filter(
+      (local) => local.getID() !== id
+    );
+    this.setState({
+      localList: newLocals,
+    });
+    console.log(newLocals);
+  };
 
   render() {
     const { photoList, localList } = this.state;
@@ -102,10 +113,14 @@ export class Section extends Component {
                 desc={photo.getDesc()}
                 className={styles.card}
                 type={this.props.type}
+                removeEle={this.removeEle}
+                id={photo.getID()}
               />
             ))
-          ) : (
+          ) : type === "add" ? (
             <FormAddPhoto />
+          ) : (
+            ""
           )}
         </div>
       </section>

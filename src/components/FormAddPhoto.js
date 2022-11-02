@@ -5,7 +5,7 @@ import styles from "../Form.module.css";
 
 function FormAddPhoto() {
   const [photos, setphotos] = useState(
-    JSON.parse(localStorage.getItem("photos"))
+    JSON.parse(localStorage.getItem("photos")) || []
   );
   const nameRef = useRef(null);
   const descRef = useRef(null);
@@ -38,7 +38,6 @@ function FormAddPhoto() {
             )
           );
           setphotos(list2);
-          localStorage.setItem("photos", JSON.stringify(photos));
         }
       }}
     >
@@ -74,7 +73,10 @@ function FormAddPhoto() {
       <button
         type="submit"
         className={styles.btn}
-        onClick={(e) => e.preventDefault()}
+        onClick={(e) => {
+          e.preventDefault();
+          localStorage.setItem("photos", JSON.stringify(photos));
+        }}
       >
         Add
       </button>
