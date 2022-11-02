@@ -1,7 +1,7 @@
 {
   "name": "photo_list",
   "version": "0.1.0",
-  "homepage": "https://xValenciax.github.io/photo_list/",
+  "homepage": "https://xValenciax.github.io/photos/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
