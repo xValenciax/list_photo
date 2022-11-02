@@ -5,7 +5,7 @@ import CardText from "./CardText";
 import styles from "../photoCard.module.css";
 
 function PhotoCard(props) {
-  const { username, profile, img, likes, photoname, desc } = props;
+  const { username, profile, img, likes, photoname, desc, type } = props;
   const [liked, setLiked] = useState(false);
 
   const isLiked = () => {
@@ -23,6 +23,7 @@ function PhotoCard(props) {
         isLiked={isLiked}
         isDisliked={isDisLiked}
         liked={liked}
+        type={type}
       />
       <CardText likes={likes} liked={liked} desc={desc} photoname={photoname} />
     </div>

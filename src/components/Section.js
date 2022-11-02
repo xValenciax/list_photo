@@ -101,6 +101,7 @@ export class Section extends Component {
                 photoname={photo.getphotoName()}
                 desc={photo.getDesc()}
                 className={styles.card}
+                type={this.props.type}
               />
             ))
           ) : (
