@@ -4,8 +4,8 @@ import Section from "./Section";
 function Main() {
   return (
     <main>
-      <Section text="Public Photos" />
-      <Section text="Local Photos" />
+      <Section text="Public Photos" type="public" />
+      <Section text="Local Photos" type="local" />
     </main>
   );
 }

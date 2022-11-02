@@ -6,6 +6,12 @@ section {
 .content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    justify-content: space-between;
     align-items: center;
+}
+
+@media(max-width: 2000px) {
+    .content {
+        gap: 40px;
+    }
 }

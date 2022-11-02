@@ -25,3 +25,7 @@
 .special__heading::before {
     left: 0;
 }
+
+.margin {
+    margin-top: 100px;
+}

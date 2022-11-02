@@ -5,10 +5,14 @@ import { FaCheckCircle } from "react-icons/fa";
 function CardHeader(props) {
   return (
     <div className={styles.cardHeader}>
-      <div className="img">
-        <img src={props.userProfilePhoto} alt="user profile"></img>
+      <div className={styles.image}>
+        <img
+          className={styles.profile}
+          src={props.profile}
+          alt="user profile"
+        ></img>
       </div>
-      <p>{props.userName}</p>
+      <p>{props.username}</p>
       <FaCheckCircle className={styles.icon} />
     </div>
   );

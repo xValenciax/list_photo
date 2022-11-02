@@ -1,7 +1,9 @@
 .image {
-    background-color: gray;
-    min-height: 250px;
     position: relative;
+    position: relative;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
 }
 
 img {
@@ -14,4 +16,22 @@ img {
     top: 85%;
     right: 10px;
     color: white;
+    cursor: pointer;
+    transition: 0.4s transform;
+    -webkit-transition: 0.4s transform;
+    -moz-transition: 0.4s transform;
+    -ms-transition: 0.4s transform;
+    -o-transition: 0.4s transform;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.Likedicon {
+    color: red;
 }

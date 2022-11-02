@@ -13,3 +13,22 @@ header {
     font-weight: 400;
     margin: 0;
 }
+
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #cde6fa;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.btn:hover {
+    background-color: #a1b4c3;
+}

@@ -1,13 +1,24 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddPhoto from "./components/AddPhoto";
+import Gallery from "./components/Gallery";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Gallery />,
+  },
+  {
+    path: "/add-photo",
+    element: <AddPhoto />,
+  },
+]);
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
+      <RouterProvider router={router} />;
     </div>
   );
 }

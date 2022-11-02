@@ -3,10 +3,26 @@ import styles from "../cardImg.module.css";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 function CardImage(props) {
+  const { img } = props;
+  const { liked, isLiked, isDisliked } = props;
   return (
     <div className={styles.image}>
-      <img src={props.photoLink} alt="fetched randomly from the API"></img>
-      <FaRegHeart className={styles.icon} />
+      <img
+        src={img}
+        alt="fetched randomly from the API"
+        width="400px"
+        height="350px"
+        style={{ objectFit: "cover", objectPosition: "0 0" }}
+      ></img>
+
+      {liked ? (
+        <FaHeart
+          className={`${styles.Likedicon} ${styles.icon}`}
+          onClick={() => isDisliked()}
+        />
+      ) : (
+        <FaRegHeart className={styles.icon} onClick={() => isLiked()} />
+      )}
     </div>
   );
 }

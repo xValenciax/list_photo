@@ -1,31 +1,32 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CardHeader from "./CardHeader";
 import CardImage from "./CardImage";
 import CardText from "./CardText";
 import styles from "../photoCard.module.css";
 
-class PhotoCard extends Component {
-  constructor(props) {
-    super(props);
+function PhotoCard(props) {
+  const { username, profile, img, likes, photoname, desc } = props;
+  const [liked, setLiked] = useState(false);
 
-    this.state = {
-      userName: "",
-      userProfilePhoto: "",
-      photoLink: "",
-      likesCount: "",
-      photoName: "",
-      photoDesc: "",
-    };
-  }
-  render() {
-    return (
-      <div className={styles.card}>
-        <CardHeader />
-        <CardImage />
-        <CardText />
-      </div>
-    );
-  }
+  const isLiked = () => {
+    setLiked(true);
+  };
+
+  const isDisLiked = () => {
+    setLiked(false);
+  };
+  return (
+    <div className={styles.card}>
+      <CardHeader username={username} profile={profile} />
+      <CardImage
+        img={img}
+        isLiked={isLiked}
+        isDisliked={isDisLiked}
+        liked={liked}
+      />
+      <CardText likes={likes} liked={liked} desc={desc} photoname={photoname} />
+    </div>
+  );
 }
 
 export default PhotoCard;
